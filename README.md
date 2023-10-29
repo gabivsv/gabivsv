@@ -1,4 +1,4 @@
-## OLá!👋
+# OLá!👋
 
 Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolvimento de Sistemas no IFSP. Com meus 18 anos, estou no início de uma jornada emocionante de aprendizado e descoberta no mundo da programação. 🚀
 
@@ -14,26 +14,25 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
   
 
 <div>
-<img height="175em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,e91e63,2ecc71&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
-<img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=pie&langs_count-16&bg_color=30,2ecc71,e91e63&title_color=fff&text_color=fff"/>
+<img height="160em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,e91e63,2ecc71&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
+<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=pie&langs_count-16&bg_color=30,2ecc71,e91e63&title_color=fff&text_color=fff"/>
 </div>
 
-####
+###
 
 <div>
-<img height="40em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">  
-<img height="40em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"/>
-<img height="40em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"/>
-<img height="40em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">  
+<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"/>
+<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"/>
+<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
 </div>
 
-##
+#
 
 <div>
 <a href ="mailto:contatogabrielavieirasv@gmail.com"><img height="25em" src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" ></a>
 <a href="https://www.linkedin.com/in/gabriela-vieira-27888b298/" target="_blank"><img height="25em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake.svg">
