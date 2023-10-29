@@ -14,8 +14,8 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
   
 
 <div>
-<img width="42%" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,e91e63,2ecc71&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
-<img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=pie&langs_count-16&bg_color=30,2ecc71,e91e63&title_color=fff&text_color=fff"/>
+<img width="39.4%" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,e91e63,2ecc71&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
+<img width="57%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=pie&langs_count-16&bg_color=30,2ecc71,e91e63&title_color=fff&text_color=fff"/>
 </div>
 
 ###
