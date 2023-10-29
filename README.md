@@ -34,4 +34,4 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
 <a href="https://www.linkedin.com/in/gabriela-vieira-27888b298/" target="_blank"><img height="25em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 
-![Snake animation](https://github.com/gabivsv/blob/output/github-contribution-grid-snake.svg)
+![snake gif](https://github.com/gabivsv/gabivsv/blob/output/github-contribution-grid-snake.gif)
