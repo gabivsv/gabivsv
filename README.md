@@ -34,4 +34,10 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
 <a href="https://www.linkedin.com/in/gabriela-vieira-27888b298/" target="_blank"><img height="25em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 
-![snake gif](https://github.com/gabivsv/gabivsv/blob/output/github-contribution-grid-snake.gif)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake.svg">
+</picture>
+
+_generated with [Platane/snk](https://github.com/Platane/snk)_
