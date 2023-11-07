@@ -32,6 +32,7 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
 <div>
 <a href ="mailto:contatogabrielavieirasv@gmail.com"><img height="25em" src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" ></a>
 <a href="https://www.linkedin.com/in/gabriela-vieira-27888b298/" target="_blank"><img height="25em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://gabrielavieira.netlify.app/"><img height="25em" src="https://img.shields.io/badge/Portifolio-FF1261?style=for-the-badge&logo=Portifolio&logoColor=white"></a>
 </div>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
