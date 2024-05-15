@@ -25,6 +25,10 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
 <img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"/>
 <img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"/>
 <img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+<i class="devicon-mysql-original"></i>
+
+          
 </div>
 
 #
