@@ -1,6 +1,6 @@
 # OLá!👋
 
-Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolvimento de Sistemas no IFSP. Com meus 18 anos, estou no início de uma jornada emocionante de aprendizado e descoberta no mundo da programação. 🚀
+Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolvimento de Sistemas no IFSP. Com meus 19 anos, estou no início de uma jornada emocionante de aprendizado e descoberta no mundo da programação. 🚀
 
 ### Hobbies
 
