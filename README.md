@@ -44,7 +44,7 @@ Estou ansiosa para contribuir para projetos desafiadores, aprender continuamente
 <div>
 <a href="https://gabrielavieira.netlify.app/"><img height="30em" src="https://img.shields.io/badge/Meu Portifolio-E4405F?style=for-the-badge&logo=Portifolio&logoColor=white"></a>
 <a href ="mailto:contatogabrielavieirasv@gmail.com"><img height="30em" src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" ></a>
-<a href="https://www.linkedin.com/in/gabriela-vieira-27888b298/" target="_blank"><img height="30em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://www.linkedin.com/in/gabriela-vieira-dos-santos-vaz-27888b298/" target="_blank"><img height="30em" src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
