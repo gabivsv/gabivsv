@@ -1,6 +1,11 @@
-# OLá!👋
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=90&color=FF1261&multiline=true&repeat=false&width=550&height=70&lines=Gabriela+Vieira+dos+Santos+Vaz)](https://git.io/typing-svg)
 
-Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolvimento de Sistemas no IFSP. Com meus 19 anos, estou no início de uma jornada emocionante de aprendizado e descoberta no mundo da programação. 🚀
+Olá, eu sou a Gabriela! Estudante de Análise e Desenvolvimento de Sistemas no IFSP e estou apaixonada pela jornada de aprendizado e descoberta que o mundo da programação oferece. Com meus 19 anos, estou explorando novas tecnologias e desafios emocionantes no campo da tecnologia.
+
+### Habilidades
+- HTML, CSS, JavaScript, React
+- Python
+- MySQL
 
 ### Hobbies
 
@@ -10,22 +15,25 @@ Sou a Gabriela, uma entusiasta da tecnologia e estudante de Análise e Desenvolv
 - 🎨 Expressão criativa através da pintura e do desenho 
 - 🎮 Jogos de vídeo game como forma de entretenimento e desafio
 
-  #### Estou ansiosa para aprender e compartilhar conhecimentos!
+### Objetivos
+Estou ansiosa para contribuir para projetos desafiadores, aprender continuamente e compartilhar conhecimentos com a comunidade. 
+
+#### Sinta-se à vontade para me contatar para discussões sobre tecnologia, colaborações em projetos ou apenas para compartilhar suas próprias experiências no mundo da programação. Estou sempre aberta a novas oportunidades e conexões!
   
 
 <div>
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,000000,FF1261&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=compact&langs_count-16&bg_color=30,FF1261,000000&title_color=fff&text_color=fff"/>
+<img height="215em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,000000,FF1261&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
+<img height="215em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=compact&langs_count-16&bg_color=30,FF1261,000000&title_color=fff&text_color=fff"/>
 </div>
 
 ###
 
 <div>
-<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">  
-<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"/>
-<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"/>
-<img height="30em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-<img height="30em" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+<img height="35em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">  
+<img height="35em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"/>
+<img height="35em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"/>
+<img height="35em" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+<img height="35em" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
 <img height="35em" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
           
 </div>
