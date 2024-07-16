@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=200&size=30&pause=90&color=FF1261&multiline=true&repeat=false&width=550&height=70&lines=Gabriela+Vieira+dos+Santos+Vaz)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=900&color=FF1261&multiline=true&repeat=false&width=550&height=70&lines=Gabriela+Vieira+dos+Santos+Vaz)](https://git.io/typing-svg)
 
 Olá, eu sou a Gabriela! Estudante de Análise e Desenvolvimento de Sistemas no IFSP e estou apaixonada pela jornada de aprendizado e descoberta que o mundo da programação oferece. Com meus 19 anos, estou explorando novas tecnologias e desafios emocionantes no campo da tecnologia.
 
