@@ -22,8 +22,8 @@ Estou ansiosa para contribuir para projetos desafiadores, aprender continuamente
   
 
 <div>
-<img height="215em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,000000,FF1261&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
-<img height="215em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=compact&langs_count-16&bg_color=30,FF1261,000000&title_color=fff&text_color=fff"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=gabivsv&bg_color=30,000000,FF1261&title_color=fff&text_color=fff&include_all_commits=true&count_private=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&layout=compact&langs_count-16&bg_color=30,FF1261,000000&title_color=fff&text_color=fff"/>
 </div>
 
 ###
