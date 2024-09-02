@@ -40,9 +40,8 @@
 ## **Objetivos**
 Estou ansiosa para contribuir para projetos desafiadores, aprender continuamente e compartilhar conhecimentos com a comunidade. 
 
+#### Sinta-se à vontade para me contatar para discussões sobre tecnologia, colaborações em projetos ou apenas para compartilhar suas próprias experiências no mundo da programação. Estou sempre aberta a novas oportunidades e conexões!
 ---
-Sinta-se à vontade para me contatar para discussões sobre tecnologia, colaborações em projetos ou apenas para compartilhar suas próprias experiências no mundo da programação. Estou sempre aberta a novas oportunidades e conexões!
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake.svg">
