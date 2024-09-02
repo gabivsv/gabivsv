@@ -22,8 +22,8 @@
 ---
 
 <div align="center">
- <img height="180cm" src="https://github-readme-stats.vercel.app/api/?username=gabivsv&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=324189&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github"/>
-  <img height="180cm" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=324189&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github&layout=compact"/> 
+ <img height="180cm" src="https://github-readme-stats.vercel.app/api/?username=gabivsv&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=212226&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github"/>
+  <img height="180cm" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=212226&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github&layout=compact"/> 
 </div>
 
 ## **Habilidades**
