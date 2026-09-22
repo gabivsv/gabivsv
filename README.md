@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<p > Olá, eu sou a Gabriela! Estudante de Análise e Desenvolvimento de Sistemas no IFSP e estou apaixonada pela jornada de aprendizado e descoberta que o mundo da programação oferece. Com meus 19 anos, estou explorando novas tecnologias e desafios emocionantes no campo da tecnologia.
+<p > Olá, eu sou a Gabriela! Graduanda em Análise e Desenvolvimento de Sistemas no IFSP, com foco em desenvolvimento de software e atualmente me aprofundando em Python e desenvolvimento de aplicações.
 </p>
 
 <div align="center">
