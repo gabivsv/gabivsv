@@ -1,50 +1,84 @@
 <div>
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=900&color=00ff21&multiline=true&repeat=false&width=550&height=70&lines=Gabriela+Vieira+dos+Santos+Vaz" alt="Typing SVG">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=100&color=00ff21&multiline=true&repeat=false&width=550&height=70&lines=%F0%9F%91%BD+Oi,+sou+a+Gabriela+Vieira!" alt="Typing SVG">
   </a>
 </div>
 
-<p > Olá, eu sou a Gabriela! Graduanda em Análise e Desenvolvimento de Sistemas no IFSP, com foco em desenvolvimento de software e atualmente me aprofundando em Python e desenvolvimento de aplicações.
-</p>
-
 <div align="center">
-  <a href="https://nebulosadev.vercel.app/" target="_blank">
-    <img height="30em" src="https://img.shields.io/badge/Meu Portifolio-009900?style=for-the-badge&logo=Portifolio&logoColor=000" alt="Meu Portfólio">
-  </a>
-  <a href="mailto:contatogabrielavieirasv@gmail.com" target="_blank">
-    <img height="30em" src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
-  </a>
-  <a href="https://www.linkedin.com/in/gabriela-vieira-dos-santos-vaz-27888b298/" target="_blank">
-    <img height="30em" src="https://img.shields.io/badge/-LinkedIn-5170ff?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  <a href="https://www.instagram.com/nebulosadev/?hl=pt-br/" target="_blank">
-    <img height="30em" src="https://img.shields.io/badge/-Instagram-ff0066?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
-  </a>
+
+  <p>
+    <strong>Desenvolvimento de Software • Python • Aplicações</strong>
+  </p>
+
 </div>
 
 ---
 
+### 👩🏻‍💻 Sobre mim
+
+Graduanda em <strong>Análise e Desenvolvimento de Sistemas no IFSP</strong>, com interesse em desenvolvimento de software e na criação de aplicações capazes de transformar problemas reais em soluções úteis.
+
+Atualmente, estou aprofundando meus conhecimentos em <strong>Python, bancos de dados e desenvolvimento de aplicações</strong>.
+
+Tenho interesse em compreender não apenas como desenvolver aplicações, mas também como os sistemas que as sustentam funcionam. Por isso, meus próximos passos incluem aprofundar conhecimentos em <strong>Linux, redes e fundamentos de sistemas</strong>, construindo gradualmente uma base para, futuramente, explorar <strong>cibersegurança</strong>.
+
+---
+
+### 🧭 Atualmente
+
+- 🐍 Aprofundando meus conhecimentos em <strong>Python</strong>
+- 💡 Gosto de identificar <strong>problemas do dia a dia</strong> e pensar em como a tecnologia pode resolvê-los
+- 🗄️ Conhecimentos em <strong>SQL e bancos de dados relacionais</strong>
+- ⚙️ Explorando <strong>automação e integração de sistemas</strong>
+- 🔐 Interesse em aprender mais sobre <strong>Linux, redes e segurança</strong>
+
+
+---
+
+### 🛠️ Tecnologias
+
+<strong>Linguagens & Desenvolvimento</strong>
+
+
+
+<strong>Banco de Dados</strong>
+
+
+
+<strong>Frameworks & Ferramentas</strong>
+
+
+
+
+---
+
+### 🚀 Projetos
+
+Aqui compartilho projetos acadêmicos, experimentos e aplicações desenvolvidas ao longo da minha jornada em tecnologia.
+
+Meu objetivo é utilizar cada projeto como uma oportunidade para <strong>aprender, experimentar e transformar ideias em soluções funcionais</strong>.
+
+---
+
+### 🌱 Em construção
+
+Estou construindo minha carreira passo a passo, conectando <strong>desenvolvimento de software, aplicações, sistemas e segurança</strong>.
+
+> <em>Aprender tecnologia, para mim, é entender problemas e descobrir o que posso construir para resolvê-los.</em>
+
+---
+
+📬 Contato
+
 <div align="center">
- <img height="180cm" src="https://github-readme-stats.vercel.app/api/?username=gabivsv&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=212226&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github"/>
-  <img height="180cm" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabivsv&&style=for-the-badge&title_color=00ff21&text_color=fff&bg_color=212226&border_color=121111&show_icons=true&icon_color=F2F2F2&rank_icon=github&layout=compact"/> 
+
+<a href="https://www.linkedin.com/in/gabivsv"> <img src="https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=00FF21" alt="LinkedIn"> </a>
+
+<a href="https://nebulosadev.vercel.app"> <img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel&logoColor=00FF21" alt="Portfolio"> </a>
+
 </div>
 
-## **Habilidades**
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)&nbsp;
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)&nbsp;
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)&nbsp;
-![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)&nbsp;
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)&nbsp;
-![Git](https://img.shields.io/badge/Git-F73C7B?style=for-the-badge&logo=git&logoColor=F2F2F2)&nbsp;
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)&nbsp;
-![VScode](https://img.shields.io/badge/vscode-4285F4?style=for-the-badge&logo=vscode&logoColor=white)&nbsp;
 
-
-## **Objetivos**
-Estou ansiosa para contribuir para projetos desafiadores, aprender continuamente e compartilhar conhecimentos com a comunidade. 
-
-#### Sinta-se à vontade para me contatar para discussões sobre tecnologia, colaborações em projetos ou apenas para compartilhar suas próprias experiências no mundo da programação. Estou sempre aberta a novas oportunidades e conexões!
----
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-grid-snake.svg">
