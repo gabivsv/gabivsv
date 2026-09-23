@@ -73,7 +73,7 @@ Meu objetivo é utilizar cada projeto como uma oportunidade para <strong>aprende
 > <em>Aprender tecnologia, para mim, é entender problemas e descobrir o que posso construir para resolvê-los.</em>
 
 ---
-## 📬 Contato
+## 📬 Conecte-se comigo
 
 <p align="center">
   <a href="https://www.linkedin.com/in/gabivsv/">
@@ -104,10 +104,11 @@ Meu objetivo é utilizar cada projeto como uma oportunidade para <strong>aprende
     src="https://raw.githubusercontent.com/gabivsv/github-contribution-spaceship/output/github-contribution-spaceship.svg?v=1">
 </picture>
 
-## Projeto
-
-- [GitHub Contribution Spaceship](https://github.com/gabivsv/github-contribution-spaceship )
-
+<p align="center">
+  <a href="https://github.com/gabivsv/github-contribution-spaceship">
+     Explorar o projeto da nave 
+  </a>
+</p>
 
 
 <!--
