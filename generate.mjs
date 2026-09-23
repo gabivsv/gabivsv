@@ -37,7 +37,7 @@ const weeks = payload.data.user.contributionsCollection.contributionCalendar.wee
 const cells = weeks.flatMap((week, x) => week.contributionDays.map((day, y) => ({ x, y, count: day.contributionCount })));
 const max = Math.max(1, ...cells.map(c => c.count));
 const width = 920, height = 210, cell = 11, gap = 3, left = 30, top = 70;
-const bg = theme === 'dark' ? '#0d1117' : '#ffffff';
+const bg = 'transparent';
 const fg = theme === 'dark' ? '#c9d1d9' : '#24292f';
 const muted = theme === 'dark' ? '#6e7681' : '#57606a';
 const levels = theme === 'dark'
@@ -53,10 +53,20 @@ const stars = Array.from({length: 42}, (_, i) => {
   const delay = (i % 9) * 0.37;
   return `<circle class="star" cx="${x}" cy="${y}" r="${r}" style="animation-delay:${delay}s"/>`;
 }).join('');
-const rects = cells.map(({x, y, count}) => {
+const starPolygon = (cx, cy, outer, inner) => Array.from({length: 10}, (_, i) => {
+  const angle = -Math.PI / 2 + i * Math.PI / 5;
+  const radius = i % 2 === 0 ? outer : inner;
+  return `${(cx + Math.cos(angle) * radius).toFixed(2)},${(cy + Math.sin(angle) * radius).toFixed(2)}`;
+}).join(' ');
+const contributionStars = cells.map(({x, y, count}) => {
   const px = left + x * (cell + gap);
   const py = top + y * (cell + gap);
-  return `<rect class="cell level-${level(count)}" x="${px}" y="${py}" width="${cell}" height="${cell}" rx="2"><title>${esc(count)} contribuição(ões)</title></rect>`;
+  const cx = px + cell / 2;
+  const cy = py + cell / 2;
+  const currentLevel = level(count);
+  const outer = currentLevel === 0 ? 2.4 : 3.2 + currentLevel * 0.65;
+  const inner = outer * 0.42;
+  return `<polygon class="contribution-star level-${currentLevel}" points="${starPolygon(cx, cy, outer, inner)}"><title>${esc(count)} contribuição(ões)</title></polygon>`;
 }).join('');
 const path = cells.filter(c => c.y === 3).map(c => `${left + c.x * (cell + gap) + cell / 2},${top + c.y * (cell + gap) + cell / 2}`).join(' ');
 const endX = left + (weeks.length - 1) * (cell + gap) + cell / 2;
@@ -68,12 +78,11 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <desc id="desc">Uma espaçonave atravessa uma grade de contribuições cercada por estrelas.</desc>
   <style>
     :root { color-scheme: ${theme}; }
-    .bg { fill: ${bg}; }
     .label { fill: ${fg}; font: 600 13px system-ui, sans-serif; }
     .subtle { fill: ${muted}; font: 11px system-ui, sans-serif; }
-    .cell { stroke: ${theme === 'dark' ? '#30363d' : '#d0d7de'}; stroke-width: .35; }
-    .level-0 { fill: ${levels[0]}; } .level-1 { fill: ${levels[1]}; } .level-2 { fill: ${levels[2]}; }
-    .level-3 { fill: ${levels[3]}; } .level-4 { fill: ${levels[4]}; }
+    .contribution-star { stroke: ${theme === 'dark' ? '#30363d' : '#d0d7de'}; stroke-width: .35; opacity: .92; }
+    .level-0 { fill: ${levels[0]}; opacity: .5; } .level-1 { fill: ${levels[1]}; }
+    .level-2 { fill: ${levels[2]}; } .level-3 { fill: ${levels[3]}; } .level-4 { fill: ${levels[4]}; }
     .star { fill: ${theme === 'dark' ? '#fff' : '#0969da'}; opacity: .7; animation: twinkle 2.4s ease-in-out infinite alternate; }
     .route { fill: none; stroke: ${theme === 'dark' ? '#58a6ff' : '#0969da'}; stroke-width: 1.4; stroke-dasharray: 4 5; opacity: .45; }
     .ship { offset-path: path('M ${path}'); offset-distance: 0%; animation: fly 18s linear infinite; transform-box: fill-box; transform-origin: center; }
@@ -83,12 +92,11 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     @keyframes flame { from { transform: scaleX(.65); opacity: .6; } to { transform: scaleX(1.15); opacity: 1; } }
     @media (prefers-reduced-motion: reduce) { .ship { animation: none; offset-distance: 100%; } .star, .flame { animation: none; } }
   </style>
-  <rect class="bg" width="100%" height="100%" rx="12"/>
   <g aria-hidden="true">${stars}</g>
   <text class="label" x="20" y="27">${esc(username)} · missão de contribuições</text>
-  <text class="subtle" x="20" y="45">Cada quadrado é um planeta visitado. Quanto mais escuro, maior a atividade.</text>
+  <text class="subtle" x="20" y="45">Cada estrela representa uma contribuição. Quanto maior e mais brilhante, maior a atividade.</text>
   <polyline class="route" points="${path}"/>
-  <g>${rects}</g>
+  <g>${contributionStars}</g>
   <g class="ship" transform="translate(-18 -13)">
     <path d="M4 14 C6 5 14 1 26 1 C24 10 19 16 10 20 Z" fill="${theme === 'dark' ? '#79c0ff' : '#0969da'}" stroke="${fg}" stroke-width="1"/>
     <circle cx="17" cy="8" r="2.2" fill="${bg}" stroke="${fg}" stroke-width="1"/>
@@ -96,7 +104,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     <path class="flame" d="M10 18 C7 21 7 24 8 26 C11 23 12 21 12 19 Z" fill="#ffdf5d"/>
   </g>
   <text class="subtle" x="${left}" y="190">menos</text>
-  ${levels.map((_, i) => `<rect class="level-${i}" x="${left + 42 + i * 16}" y="181" width="11" height="11" rx="2"/>`).join('')}
+  ${levels.map((_, i) => `<polygon class="contribution-star level-${i}" points="${starPolygon(left + 47 + i * 16, 186.5, i === 0 ? 2.4 : 3.2 + i * .65, (i === 0 ? 2.4 : 3.2 + i * .65) * .42)}"/>`).join('')}
   <text class="subtle" x="${left + 130}" y="190">mais</text>
   <text class="subtle" x="${width - 170}" y="190">últimas 52 semanas</text>
 </svg>`;
