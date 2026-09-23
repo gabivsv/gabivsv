@@ -58,6 +58,14 @@ const starPolygon = (cx, cy, outer, inner) => Array.from({length: 10}, (_, i) =>
   const radius = i % 2 === 0 ? outer : inner;
   return `${(cx + Math.cos(angle) * radius).toFixed(2)},${(cy + Math.sin(angle) * radius).toFixed(2)}`;
 }).join(' ');
+// Uma estrela ativa por semana define o trajeto da nave.
+const routeCells = weeks.flatMap((week, x) => {
+  const days = week.contributionDays.map((day, y) => ({ x, y, count: day.contributionCount }));
+  const active = days.filter(day => day.count > 0);
+  if (!active.length) return [];
+  return [active.sort((a, b) => b.count - a.count || Math.abs(a.y - 3) - Math.abs(b.y - 3))[0]];
+});
+const routeIndex = new Map(routeCells.map((cell, index) => [`${cell.x}:${cell.y}`, index]));
 const contributionStars = cells.map(({x, y, count}) => {
   const px = left + x * (cell + gap);
   const py = top + y * (cell + gap);
@@ -66,9 +74,13 @@ const contributionStars = cells.map(({x, y, count}) => {
   const currentLevel = level(count);
   const outer = currentLevel === 0 ? 4.8 : 6.2 + currentLevel * 1.1;
   const inner = outer * 0.42;
-  return `<polygon class="contribution-star level-${currentLevel}" points="${starPolygon(cx, cy, outer, inner)}"><title>${esc(count)} contribuição(ões)</title></polygon>`;
+  const index = routeIndex.get(`${x}:${y}`);
+  const routeClass = index === undefined ? '' : ' route-star';
+  const routeDelay = index === undefined || routeCells.length < 2 ? 0 : (index / (routeCells.length - 1)) * 18 - 1.2;
+  const style = index === undefined ? '' : ` style="--pulse-delay:${routeDelay.toFixed(2)}s"`;
+  return `<polygon class="contribution-star level-${currentLevel}${routeClass}" points="${starPolygon(cx, cy, outer, inner)}"${style}><title>${esc(count)} contribuição(ões)</title></polygon>`;
 }).join('');
-const path = cells.filter(c => c.y === 3).map(c => `${left + c.x * (cell + gap) + cell / 2},${top + c.y * (cell + gap) + cell / 2}`).join(' ');
+const path = routeCells.map(c => `${left + c.x * (cell + gap) + cell / 2},${top + c.y * (cell + gap) + cell / 2}`).join(' ');
 const endX = left + (weeks.length - 1) * (cell + gap) + cell / 2;
 const endY = top + 3 * (cell + gap) + cell / 2;
 
@@ -84,14 +96,16 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     .contribution-star { stroke: ${theme === 'dark' ? '#30363d' : '#d0d7de'}; stroke-width: .35; opacity: .92; }
     .level-0 { fill: ${levels[0]}; opacity: .5; } .level-1 { fill: ${levels[1]}; }
     .level-2 { fill: ${levels[2]}; } .level-3 { fill: ${levels[3]}; } .level-4 { fill: ${levels[4]}; }
+    .route-star { transform-box: fill-box; transform-origin: center; animation: pulse-star 18s linear infinite var(--pulse-delay); }
     .star { fill: ${theme === 'dark' ? '#fff' : '#0969da'}; opacity: .7; animation: twinkle 2.4s ease-in-out infinite alternate; }
     .route { fill: none; stroke: #58a6ff; stroke-width: 2; stroke-dasharray: 6 7; opacity: .55; }
     .ship { offset-path: path('M ${path}'); offset-distance: 0%; animation: fly 18s linear infinite; transform-box: fill-box; transform-origin: center; }
     .flame { animation: flame .24s ease-in-out infinite alternate; transform-origin: 0 10px; }
     @keyframes fly { to { offset-distance: 100%; } }
     @keyframes twinkle { from { opacity: .25; } to { opacity: 1; } }
+    @keyframes pulse-star { 0%, 4%, 100% { transform: scale(1); filter: brightness(1); } 5%, 8% { transform: scale(1.75); filter: brightness(2.2) drop-shadow(0 0 7px #fde68a); } 12% { transform: scale(1); filter: brightness(1); } }
     @keyframes flame { from { transform: scaleX(.65); opacity: .6; } to { transform: scaleX(1.15); opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .ship { animation: none; offset-distance: 100%; } .star, .flame { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .ship { animation: none; offset-distance: 100%; } .star, .flame, .route-star { animation: none; } }
   </style>
   <g aria-hidden="true">${stars}</g>
   <text class="label" x="45" y="48">${esc(username)} · missão de contribuições</text>
