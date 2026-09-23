@@ -36,20 +36,18 @@ if (payload.errors?.length) throw new Error(payload.errors.map(e => e.message).j
 const weeks = payload.data.user.contributionsCollection.contributionCalendar.weeks;
 const cells = weeks.flatMap((week, x) => week.contributionDays.map((day, y) => ({ x, y, count: day.contributionCount })));
 const max = Math.max(1, ...cells.map(c => c.count));
-const width = 1700, height = 400, cell = 22, gap = 6, left = 60, top = 155;
+const width = 1900, height = 460, cell = 24, gap = 7, left = 70, top = 180;
 const bg = 'transparent';
 const fg = '#ffffff';
 const muted = '#ffffff';
-const levels = theme === 'dark'
-  ? ['#161b22','#0e4429','#006d32','#26a641','#39d353']
-  : ['#ebedf0','#9be9a8','#40c463','#30a14e','#216e39'];
+const levels = ['#172554','#1d4ed8','#7c3aed','#c026d3','#f0abfc'];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const level = count => count === 0 ? 0 : Math.min(4, Math.ceil((count / max) * 4));
 const starSeed = 17;
-const stars = Array.from({length: 42}, (_, i) => {
+const stars = Array.from({length: 90}, (_, i) => {
   const x = (i * 83 + starSeed * 7) % width;
-  const y = (i * 47 + 11) % 52;
-  const r = i % 7 === 0 ? 3 : i % 3 === 0 ? 2.2 : 1.5;
+  const y = (i * 137 + 31) % (height - 20) + 10;
+  const r = i % 11 === 0 ? 4 : i % 5 === 0 ? 2.8 : 2;
   const delay = (i % 9) * 0.37;
   return `<circle class="star" cx="${x}" cy="${y}" r="${r}" style="animation-delay:${delay}s"/>`;
 }).join('');
@@ -72,7 +70,7 @@ const contributionStars = cells.map(({x, y, count}) => {
   const cx = px + cell / 2;
   const cy = py + cell / 2;
   const currentLevel = level(count);
-  const outer = currentLevel === 0 ? 4.8 : 6.2 + currentLevel * 1.1;
+  const outer = currentLevel === 0 ? 6.5 : 8.5 + currentLevel * 1.4;
   const inner = outer * 0.42;
   const index = routeIndex.get(`${x}:${y}`);
   const routeClass = index === undefined ? '' : ' route-star';
@@ -91,13 +89,14 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <style>
     :root { color-scheme: ${theme}; }
     .label, .subtle { fill: ${fg}; stroke: #0d1117; stroke-width: 2px; paint-order: stroke; stroke-linejoin: round; }
-    .label { font: 700 30px system-ui, sans-serif; }
-    .subtle { font: 18px system-ui, sans-serif; }
+    .space-background { fill: url(#space-gradient); }
+    .label { font: 700 34px system-ui, sans-serif; }
+    .subtle { font: 20px system-ui, sans-serif; }
     .contribution-star { stroke: ${theme === 'dark' ? '#30363d' : '#d0d7de'}; stroke-width: .35; opacity: .92; }
     .level-0 { fill: ${levels[0]}; opacity: .5; } .level-1 { fill: ${levels[1]}; }
     .level-2 { fill: ${levels[2]}; } .level-3 { fill: ${levels[3]}; } .level-4 { fill: ${levels[4]}; }
     .route-star { transform-box: fill-box; transform-origin: center; animation: pulse-star 18s linear infinite var(--pulse-delay); }
-    .star { fill: ${theme === 'dark' ? '#fff' : '#0969da'}; opacity: .7; animation: twinkle 2.4s ease-in-out infinite alternate; }
+    .star { fill: #ffffff; opacity: .8; animation: twinkle 2.4s ease-in-out infinite alternate; }
     .route { fill: none; stroke: #58a6ff; stroke-width: 2; stroke-dasharray: 6 7; opacity: .55; }
     .ship { offset-path: path('M ${path}'); offset-distance: 0%; animation: fly 18s linear infinite; transform-box: fill-box; transform-origin: center; }
     .flame { animation: flame .24s ease-in-out infinite alternate; transform-origin: 0 10px; }
@@ -107,25 +106,34 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     @keyframes flame { from { transform: scaleX(.65); opacity: .6; } to { transform: scaleX(1.15); opacity: 1; } }
     @media (prefers-reduced-motion: reduce) { .ship { animation: none; offset-distance: 100%; } .star, .flame, .route-star { animation: none; } }
   </style>
+  <defs>
+    <linearGradient id="space-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect class="space-background" width="100%" height="100%" rx="18"/>
   <g aria-hidden="true">${stars}</g>
-  <text class="label" x="45" y="48">${esc(username)} · missão de contribuições</text>
-  <text class="subtle" x="45" y="88">Cada estrela representa uma contribuição. Quanto maior e mais brilhante, maior a atividade.</text>
+  <text class="label" x="45" y="55">${esc(username)} · missão de contribuições</text>
+  <text class="subtle" x="45" y="100">Cada estrela representa uma contribuição. A nave visita os pontos mais ativos.</text>
   <polyline class="route" points="${path}"/>
   <g>${contributionStars}</g>
-  <g class="ship" transform="translate(-30 -25) scale(1.35)">
-    <path d="M5 21 C10 8 21 2 39 2 C36 16 26 26 10 29 Z" fill="#facc15" stroke="#fff7ed" stroke-width="1.5"/>
-    <path d="M15 22 L5 34 L22 27 Z" fill="#d97706" stroke="#fff7ed" stroke-width="1"/>
-    <path d="M29 17 L39 25 L25 26 Z" fill="#b45309" stroke="#fff7ed" stroke-width="1"/>
-    <path d="M33 4 L42 1 L38 10 Z" fill="#fde68a" stroke="#fff7ed" stroke-width="1"/>
-    <circle cx="27" cy="10" r="4.2" fill="#451a03" stroke="#fff7ed" stroke-width="1.3"/>
-    <circle cx="28" cy="9" r="1.1" fill="#ffffff"/>
-    <path class="flame" d="M12 27 C6 29 2 34 1 40 C7 37 12 35 16 30 Z" fill="#f97316"/>
-    <path class="flame" d="M16 29 C12 34 12 38 14 41 C18 36 19 32 19 29 Z" fill="#fde047"/>
+  <g class="ship" transform="translate(-38 -28) scale(1.55)">
+    <ellipse cx="25" cy="23" rx="23" ry="10" fill="#cbd5e1" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M10 20 C13 7 37 7 40 20 C32 25 18 25 10 20 Z" fill="#a78bfa" stroke="#f5f3ff" stroke-width="1.5"/>
+    <ellipse cx="25" cy="18" rx="8" ry="5" fill="#312e81" stroke="#ddd6fe" stroke-width="1"/>
+    <circle cx="22" cy="17" r="1.2" fill="#ffffff"/>
+    <circle cx="27" cy="17" r="1.2" fill="#ffffff"/>
+    <path d="M5 25 Q25 34 45 25" fill="none" stroke="#f0abfc" stroke-width="2"/>
+    <path class="flame" d="M13 28 C11 34 13 39 17 42 C18 36 19 32 19 29 Z" fill="#22d3ee"/>
+    <path class="flame" d="M25 30 C24 37 26 41 29 43 C31 37 30 33 29 29 Z" fill="#c084fc"/>
+    <path class="flame" d="M37 28 C39 34 37 39 34 42 C33 36 32 32 32 29 Z" fill="#22d3ee"/>
   </g>
-  <text class="subtle" x="${left}" y="380">menos</text>
-  ${levels.map((_, i) => { const r = i === 0 ? 4.8 : 6.2 + i * 1.1; return `<polygon class="contribution-star level-${i}" points="${starPolygon(left + 82 + i * 30, 373, r, r * .42)}"/>`; }).join('')}
-  <text class="subtle" x="${left + 195}" y="380">mais</text>
-  <text class="subtle" x="${width - 250}" y="380">últimas 52 semanas</text>
+  <text class="subtle" x="${left}" y="438">menos</text>
+  ${levels.map((_, i) => { const r = i === 0 ? 6.5 : 8.5 + i * 1.4; return `<polygon class="contribution-star level-${i}" points="${starPolygon(left + 105 + i * 36, 430, r, r * .42)}"/>`; }).join('')}
+  <text class="subtle" x="${left + 235}" y="438">mais</text>
+  <text class="subtle" x="${width - 280}" y="438">últimas 52 semanas</text>
 </svg>`;
 
 await fs.mkdir('dist', { recursive: true });
