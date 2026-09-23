@@ -21,14 +21,22 @@ jobs:
           mkdir -p output
 
           cat > output/contribution-space.svg <<'EOF'
-          <svg width="900" height="180" viewBox="0 0 900 180"
-               xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="900"
+            height="180"
+            viewBox="0 0 900 180"
+            xmlns="http://www.w3.org/2000/svg"
+          >
 
             <rect width="900" height="180" fill="#000000"/>
 
             <defs>
               <filter id="glow">
-                <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                <feGaussianBlur
+                  stdDeviation="2.5"
+                  result="blur"
+                />
+
                 <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
@@ -36,9 +44,16 @@ jobs:
               </filter>
             </defs>
 
-            <!-- Estrelas / contribuições -->
-            <g fill="#00FF21" filter="url(#glow)">
+            <!-- ================================= -->
+            <!-- ESTRELAS / CONTRIBUIÇÕES -->
+            <!-- ================================= -->
 
+            <g
+              fill="#00FF21"
+              filter="url(#glow)"
+            >
+
+              <!-- Linha 1 -->
               <circle cx="35" cy="45" r="2"/>
               <circle cx="55" cy="45" r="3"/>
               <circle cx="75" cy="45" r="1.5"/>
@@ -51,6 +66,7 @@ jobs:
               <circle cx="215" cy="45" r="1.5"/>
               <circle cx="235" cy="45" r="3"/>
 
+              <!-- Linha 2 -->
               <circle cx="35" cy="65" r="1.5"/>
               <circle cx="55" cy="65" r="4"/>
               <circle cx="75" cy="65" r="2"/>
@@ -63,6 +79,7 @@ jobs:
               <circle cx="215" cy="65" r="4"/>
               <circle cx="235" cy="65" r="2"/>
 
+              <!-- Linha 3 -->
               <circle cx="35" cy="85" r="3"/>
               <circle cx="55" cy="85" r="1.5"/>
               <circle cx="75" cy="85" r="4"/>
@@ -75,6 +92,7 @@ jobs:
               <circle cx="215" cy="85" r="1.5"/>
               <circle cx="235" cy="85" r="4"/>
 
+              <!-- Linha 4 -->
               <circle cx="35" cy="105" r="2"/>
               <circle cx="55" cy="105" r="3"/>
               <circle cx="75" cy="105" r="1.5"/>
@@ -87,6 +105,7 @@ jobs:
               <circle cx="215" cy="105" r="3"/>
               <circle cx="235" cy="105" r="1.5"/>
 
+              <!-- Linha 5 -->
               <circle cx="35" cy="125" r="4"/>
               <circle cx="55" cy="125" r="2"/>
               <circle cx="75" cy="125" r="3"/>
@@ -101,8 +120,16 @@ jobs:
 
             </g>
 
-            <!-- Pequenas estrelas distantes -->
-            <g fill="#00FF21" opacity="0.45">
+
+            <!-- ================================= -->
+            <!-- ESTRELAS DISTANTES -->
+            <!-- ================================= -->
+
+            <g
+              fill="#00FF21"
+              opacity="0.45"
+            >
+
               <circle cx="290" cy="30" r="1"/>
               <circle cx="360" cy="65" r="1"/>
               <circle cx="430" cy="35" r="1"/>
@@ -111,56 +138,98 @@ jobs:
               <circle cx="700" cy="145" r="1"/>
               <circle cx="790" cy="60" r="1"/>
               <circle cx="850" cy="115" r="1"/>
+
             </g>
 
-            <!-- Astronauta -->
-            <g transform="translate(430 70)" fill="none"
-               stroke="#00FF21" stroke-width="2">
 
-              <!-- mochila -->
-              <rect x="-18" y="5" width="10" height="32"
-                    rx="3" fill="#000000"/>
+            <!-- ================================= -->
+            <!-- ASTRONAUTA -->
+            <!-- ================================= -->
 
-              <!-- capacete -->
-              <circle cx="0" cy="0" r="17" fill="#000000"/>
+            <g
+              id="astronaut"
+              transform="translate(430 70)"
+              fill="none"
+              stroke="#00FF21"
+              stroke-width="2"
+            >
 
-              <!-- visor -->
-              <rect x="-10" y="-6" width="20" height="12"
-                    rx="6" fill="#00FF21" stroke="none"/>
+              <!-- Mochila -->
+              <rect
+                x="-18"
+                y="5"
+                width="10"
+                height="32"
+                rx="3"
+                fill="#000000"
+              />
 
-              <!-- corpo -->
-              <rect x="-12" y="16" width="24" height="30"
-                    rx="7" fill="#000000"/>
+              <!-- Capacete -->
+              <circle
+                cx="0"
+                cy="0"
+                r="17"
+                fill="#000000"
+              />
 
-              <!-- braço esquerdo -->
+              <!-- Visor -->
+              <rect
+                x="-10"
+                y="-6"
+                width="20"
+                height="12"
+                rx="6"
+                fill="#00FF21"
+                stroke="none"
+              />
+
+              <!-- Corpo -->
+              <rect
+                x="-12"
+                y="16"
+                width="24"
+                height="30"
+                rx="7"
+                fill="#000000"
+              />
+
+              <!-- Braço esquerdo -->
               <path d="M-12 21 L-28 32 L-36 25"/>
 
-              <!-- braço direito -->
+              <!-- Braço direito -->
               <path d="M12 21 L28 12 L36 18"/>
 
-              <!-- perna esquerda -->
+              <!-- Perna esquerda -->
               <path d="M-7 45 L-15 61 L-25 61"/>
 
-              <!-- perna direita -->
+              <!-- Perna direita -->
               <path d="M7 45 L15 61 L25 61"/>
 
-            </g>
+              <!-- Movimento -->
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="
+                  430 70;
+                  450 65;
+                  480 70;
+                  450 75;
+                  430 70
+                "
+                dur="8s"
+                repeatCount="indefinite"
+              />
 
-            <!-- Movimento do astronauta -->
-            <animateTransform
-              href="#astronaut"
-              attributeName="transform"
-              type="translate"
-              values="420 70; 450 65; 480 70; 450 75; 420 70"
-              dur="8s"
-              repeatCount="indefinite"/>
+            </g>
 
           </svg>
           EOF
 
+
       - name: Publish animation
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          build_dir: output
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: output
+          force_orphan: true
