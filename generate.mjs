@@ -70,7 +70,7 @@ const contributionStars = cells.map(({x, y, count}) => {
   const cx = px + cell / 2;
   const cy = py + cell / 2;
   const currentLevel = level(count);
-  const outer = currentLevel === 0 ? 6.5 : 8.5 + currentLevel * 1.4;
+  const outer = currentLevel === 0 ? 9 : 10 + currentLevel * 1.5;
   const inner = outer * 0.42;
   const index = routeIndex.get(`${x}:${y}`);
   const routeClass = index === undefined ? '' : ' route-star';
@@ -116,7 +116,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect class="space-background" width="100%" height="100%" rx="18"/>
   <g aria-hidden="true">${stars}</g>
   <text class="label" x="45" y="55">${esc(username)} · missão de contribuições</text>
-  <text class="subtle" x="45" y="100">Cada estrela representa uma contribuição. A nave visita os pontos mais ativos.</text>
+  <text class="subtle" x="45" y="100">Cada estrela representa uma contribuição. Tamanho e cor indicam o nível de atividade.</text>
   <polyline class="route" points="${path}"/>
   <g>${contributionStars}</g>
   <g class="ship" transform="translate(-38 -28) scale(1.55)">
@@ -130,9 +130,9 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     <path class="flame" d="M25 30 C24 37 26 41 29 43 C31 37 30 33 29 29 Z" fill="#c084fc"/>
     <path class="flame" d="M37 28 C39 34 37 39 34 42 C33 36 32 32 32 29 Z" fill="#22d3ee"/>
   </g>
-  <text class="subtle" x="${left}" y="438">menos</text>
-  ${levels.map((_, i) => { const r = i === 0 ? 6.5 : 8.5 + i * 1.4; return `<polygon class="contribution-star level-${i}" points="${starPolygon(left + 105 + i * 36, 430, r, r * .42)}"/>`; }).join('')}
-  <text class="subtle" x="${left + 235}" y="438">mais</text>
+  <text class="subtle" x="${left}" y="438">menos atividade</text>
+  ${levels.map((_, i) => { const r = i === 0 ? 9 : 10 + i * 1.5; return `<polygon class="contribution-star level-${i}" points="${starPolygon(left + 160 + i * 38, 430, r, r * .42)}"/>`; }).join('')}
+  <text class="subtle" x="${left + 315}" y="438">mais atividade</text>
   <text class="subtle" x="${width - 280}" y="438">últimas 52 semanas</text>
 </svg>`;
 
