@@ -93,16 +93,17 @@ Meu objetivo é utilizar cada projeto como uma oportunidade para <strong>aprende
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship-dark.svg?v=9">
+    srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship-dark.svg?v=10">
 
   <source
     media="(prefers-color-scheme: light )"
-    srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship.svg?v=9">
+    srcset="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship.svg?v=10">
 
   <img
-    alt="Disco voador atravessando minhas contribuições"
-    src="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship.svg?v=9">
+    alt="Céu estrelado com disco voador e contribuições"
+    src="https://raw.githubusercontent.com/gabivsv/gabivsv/output/github-contribution-spaceship.svg?v=10">
 </picture>
+
 
 <!--
 <picture>
