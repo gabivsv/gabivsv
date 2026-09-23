@@ -16,215 +16,237 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate contribution animation
+      - name: Generate contribution space
         run: |
           mkdir -p output
 
-          cat > output/contribution-space.svg <<'EOF'
-          <svg
-            width="900"
-            height="180"
-            viewBox="0 0 900 180"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          python - <<'PY'
+          import random
 
-            <rect width="900" height="180" fill="#000000"/>
+          WIDTH = 1100
+          HEIGHT = 190
+
+          cols = 52
+          rows = 7
+
+          start_x = 35
+          start_y = 45
+          gap_x = 20
+          gap_y = 18
+
+          svg = []
+
+          svg.append(f'''<svg
+            width="{WIDTH}"
+            height="{HEIGHT}"
+            viewBox="0 0 {WIDTH} {HEIGHT}"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <rect width="{WIDTH}" height="{HEIGHT}" fill="#000000"/>
 
             <defs>
               <filter id="glow">
-                <feGaussianBlur
-                  stdDeviation="2.5"
-                  result="blur"
-                />
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
 
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="4" result="blur"/>
                 <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
+          ''')
 
-            <!-- ================================= -->
-            <!-- ESTRELAS / CONTRIBUIÇÕES -->
-            <!-- ================================= -->
+          # Contribution grid
+          svg.append('''
+            <g id="contributions">
+          ''')
 
-            <g
-              fill="#00FF21"
-              filter="url(#glow)"
-            >
+          random.seed(42)
 
-              <!-- Linha 1 -->
-              <circle cx="35" cy="45" r="2"/>
-              <circle cx="55" cy="45" r="3"/>
-              <circle cx="75" cy="45" r="1.5"/>
-              <circle cx="95" cy="45" r="4"/>
-              <circle cx="115" cy="45" r="2"/>
-              <circle cx="135" cy="45" r="1.5"/>
-              <circle cx="155" cy="45" r="3"/>
-              <circle cx="175" cy="45" r="2"/>
-              <circle cx="195" cy="45" r="4"/>
-              <circle cx="215" cy="45" r="1.5"/>
-              <circle cx="235" cy="45" r="3"/>
+          for x in range(cols):
+              for y in range(rows):
 
-              <!-- Linha 2 -->
-              <circle cx="35" cy="65" r="1.5"/>
-              <circle cx="55" cy="65" r="4"/>
-              <circle cx="75" cy="65" r="2"/>
-              <circle cx="95" cy="65" r="3"/>
-              <circle cx="115" cy="65" r="1.5"/>
-              <circle cx="135" cy="65" r="4"/>
-              <circle cx="155" cy="65" r="2"/>
-              <circle cx="175" cy="65" r="3"/>
-              <circle cx="195" cy="65" r="1.5"/>
-              <circle cx="215" cy="65" r="4"/>
-              <circle cx="235" cy="65" r="2"/>
+                  # Prototype intensity.
+                  # Later this will come from real GitHub contributions.
+                  level = random.choices(
+                      [0, 1, 2, 3, 4],
+                      weights=[18, 32, 27, 16, 7]
+                  )[0]
 
-              <!-- Linha 3 -->
-              <circle cx="35" cy="85" r="3"/>
-              <circle cx="55" cy="85" r="1.5"/>
-              <circle cx="75" cy="85" r="4"/>
-              <circle cx="95" cy="85" r="2"/>
-              <circle cx="115" cy="85" r="3"/>
-              <circle cx="135" cy="85" r="1.5"/>
-              <circle cx="155" cy="85" r="4"/>
-              <circle cx="175" cy="85" r="2"/>
-              <circle cx="195" cy="85" r="3"/>
-              <circle cx="215" cy="85" r="1.5"/>
-              <circle cx="235" cy="85" r="4"/>
+                  if level == 0:
+                      continue
 
-              <!-- Linha 4 -->
-              <circle cx="35" cy="105" r="2"/>
-              <circle cx="55" cy="105" r="3"/>
-              <circle cx="75" cy="105" r="1.5"/>
-              <circle cx="95" cy="105" r="4"/>
-              <circle cx="115" cy="105" r="2"/>
-              <circle cx="135" cy="105" r="3"/>
-              <circle cx="155" cy="105" r="1.5"/>
-              <circle cx="175" cy="105" r="4"/>
-              <circle cx="195" cy="105" r="2"/>
-              <circle cx="215" cy="105" r="3"/>
-              <circle cx="235" cy="105" r="1.5"/>
+                  cx = start_x + x * gap_x
+                  cy = start_y + y * gap_y
 
-              <!-- Linha 5 -->
-              <circle cx="35" cy="125" r="4"/>
-              <circle cx="55" cy="125" r="2"/>
-              <circle cx="75" cy="125" r="3"/>
-              <circle cx="95" cy="125" r="1.5"/>
-              <circle cx="115" cy="125" r="4"/>
-              <circle cx="135" cy="125" r="2"/>
-              <circle cx="155" cy="125" r="3"/>
-              <circle cx="175" cy="125" r="1.5"/>
-              <circle cx="195" cy="125" r="4"/>
-              <circle cx="215" cy="125" r="2"/>
-              <circle cx="235" cy="125" r="3"/>
+                  if level == 1:
+                      r = 1.5
+                      opacity = 0.35
+                  elif level == 2:
+                      r = 2.1
+                      opacity = 0.55
+                  elif level == 3:
+                      r = 2.8
+                      opacity = 0.78
+                  else:
+                      r = 3.5
+                      opacity = 1
 
-            </g>
+                  filter_id = "url(#glow)" if level >= 3 else ""
 
+                  svg.append(
+                      f'<path '
+                      f'd="M {cx} {cy-2.2} '
+                      f'L {cx+0.9} {cy-0.9} '
+                      f'L {cx+2.2} {cy} '
+                      f'L {cx+0.9} {cy+0.9} '
+                      f'L {cx} {cy+2.2} '
+                      f'L {cx-0.9} {cy+0.9} '
+                      f'L {cx-2.2} {cy} '
+                      f'L {cx-0.9} {cy-0.9} Z" '
+                      f'fill="#00FF21" '
+                      f'opacity="{opacity}" '
+                      f'filter="{filter_id}"/>'
+                  )
 
-            <!-- ================================= -->
-            <!-- ESTRELAS DISTANTES -->
-            <!-- ================================= -->
+          svg.append('</g>')
 
-            <g
-              fill="#00FF21"
-              opacity="0.45"
-            >
+          # Astronaut
+          astronaut_y = 88
 
-              <circle cx="290" cy="30" r="1"/>
-              <circle cx="360" cy="65" r="1"/>
-              <circle cx="430" cy="35" r="1"/>
-              <circle cx="520" cy="125" r="1"/>
-              <circle cx="610" cy="50" r="1"/>
-              <circle cx="700" cy="145" r="1"/>
-              <circle cx="790" cy="60" r="1"/>
-              <circle cx="850" cy="115" r="1"/>
+          svg.append(f'''
+            <g id="astronaut">
 
-            </g>
-
-
-            <!-- ================================= -->
-            <!-- ASTRONAUTA -->
-            <!-- ================================= -->
-
-            <g
-              id="astronaut"
-              transform="translate(430 70)"
-              fill="none"
-              stroke="#00FF21"
-              stroke-width="2"
-            >
-
-              <!-- Mochila -->
-              <rect
-                x="-18"
-                y="5"
-                width="10"
-                height="32"
-                rx="3"
-                fill="#000000"
-              />
-
-              <!-- Capacete -->
-              <circle
-                cx="0"
-                cy="0"
-                r="17"
-                fill="#000000"
-              />
-
-              <!-- Visor -->
-              <rect
-                x="-10"
-                y="-6"
-                width="20"
-                height="12"
-                rx="6"
-                fill="#00FF21"
-                stroke="none"
-              />
-
-              <!-- Corpo -->
-              <rect
-                x="-12"
-                y="16"
-                width="24"
-                height="30"
-                rx="7"
-                fill="#000000"
-              />
-
-              <!-- Braço esquerdo -->
-              <path d="M-12 21 L-28 32 L-36 25"/>
-
-              <!-- Braço direito -->
-              <path d="M12 21 L28 12 L36 18"/>
-
-              <!-- Perna esquerda -->
-              <path d="M-7 45 L-15 61 L-25 61"/>
-
-              <!-- Perna direita -->
-              <path d="M7 45 L15 61 L25 61"/>
-
-              <!-- Movimento -->
+              <!-- subtle movement -->
               <animateTransform
                 attributeName="transform"
                 type="translate"
                 values="
-                  430 70;
-                  450 65;
-                  480 70;
-                  450 75;
-                  430 70
+                  -5 0;
+                  0 -2;
+                  5 0;
+                  0 2;
+                  -5 0
                 "
-                dur="8s"
+                dur="3s"
+                repeatCount="indefinite"
+              />
+
+              <!-- small trail -->
+              <path
+                d="M 0 10 L -9 13 M 0 10 L -7 17"
+                stroke="#00FF21"
+                stroke-width="1"
+                opacity="0.35"
+              />
+
+              <!-- backpack -->
+              <rect
+                x="-7"
+                y="-2"
+                width="4"
+                height="13"
+                rx="1.5"
+                fill="#000"
+                stroke="#00FF21"
+                stroke-width="1"
+              />
+
+              <!-- helmet -->
+              <circle
+                cx="0"
+                cy="-7"
+                r="7"
+                fill="#000"
+                stroke="#00FF21"
+                stroke-width="1.2"
+              />
+
+              <!-- visor -->
+              <path
+                d="M -4 -8
+                   Q 0 -11 4 -8
+                   L 3 -5
+                   Q 0 -3 -3 -5
+                   Z"
+                fill="#00FF21"
+                opacity="0.9"
+              />
+
+              <!-- body -->
+              <rect
+                x="-5"
+                y="0"
+                width="10"
+                height="12"
+                rx="3"
+                fill="#000"
+                stroke="#00FF21"
+                stroke-width="1.1"
+              />
+
+              <!-- left arm -->
+              <path
+                d="M -5 3 L -10 7"
+                stroke="#00FF21"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+
+              <!-- right arm -->
+              <path
+                d="M 5 3 L 10 0"
+                stroke="#00FF21"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+
+              <!-- legs -->
+              <path
+                d="M -3 12 L -6 18"
+                stroke="#00FF21"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M 3 12 L 6 18"
+                stroke="#00FF21"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+
+              <!-- movement across the contribution field -->
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="
+                  20 {astronaut_y};
+                  300 {astronaut_y - 3};
+                  580 {astronaut_y};
+                  860 {astronaut_y + 3};
+                  1100 {astronaut_y};
+                  20 {astronaut_y}
+                "
+                dur="18s"
                 repeatCount="indefinite"
               />
 
             </g>
+          ''')
 
-          </svg>
-          EOF
+          svg.append('</svg>')
 
+          with open("output/contribution-space.svg", "w", encoding="utf-8") as f:
+              f.write("\n".join(svg))
+          PY
 
       - name: Publish animation
         uses: peaceiris/actions-gh-pages@v4
