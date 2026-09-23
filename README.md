@@ -14,7 +14,7 @@
 
 ---
 
-### 👩🏻‍💻 Sobre mim
+## 👩🏻‍💻 Sobre mim
 
 Graduanda em <strong>Análise e Desenvolvimento de Sistemas no IFSP</strong>, com interesse em desenvolvimento de software e na criação de aplicações capazes de transformar problemas reais em soluções úteis.
 
@@ -24,7 +24,7 @@ Tenho interesse em compreender não apenas como desenvolver aplicações, mas ta
 
 ---
 
-### 🧭 Atualmente
+## 🧭 Atualmente
 
 - 🐍 Aprofundando meus conhecimentos em <strong>Python</strong>
 - 💡 Gosto de identificar <strong>problemas do dia a dia</strong> e pensar em como a tecnologia pode resolvê-los
@@ -35,24 +35,34 @@ Tenho interesse em compreender não apenas como desenvolver aplicações, mas ta
 
 ---
 
-### 🛠️ Tecnologias
+## 🛠️ Tecnologias
 
 <strong>Linguagens & Desenvolvimento</strong>
-
-
+<p>  
+  <img src="https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python&logoColor=00FF21" alt="Python">
+  <img src="https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=00FF21" alt="JavaScript">
+  <img src="https://img.shields.io/badge/HTML5-000?style=for-the-badge&logo=html5&logoColor=00FF21" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-000?style=for-the-badge&logo=css&logoColor=00FF21" alt="CSS3">
+</p>
 
 <strong>Banco de Dados</strong>
 
-
+<p>
+  <img src="https://img.shields.io/badge/MySQL-000?style=for-the-badge&logo=mysql&logoColor=00FF21" alt="MySQL">
+</p>
 
 <strong>Frameworks & Ferramentas</strong>
-
+<p>
+  <img src="https://img.shields.io/badge/Figma-000?style=for-the-badge&logo=figma&logoColor=00FF21" alt="Figma">
+  <img src="https://img.shields.io/badge/Git-000?style=for-the-badge&logo=git&logoColor=00FF21" alt="Git">
+  <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=00FF21" alt="GitHub">
+</p>
 
 
 
 ---
 
-### 🚀 Projetos
+## 🚀 Projetos
 
 Aqui compartilho projetos acadêmicos, experimentos e aplicações desenvolvidas ao longo da minha jornada em tecnologia.
 
@@ -60,23 +70,25 @@ Meu objetivo é utilizar cada projeto como uma oportunidade para <strong>aprende
 
 ---
 
-### 🌱 Em construção
-
-Estou construindo minha carreira passo a passo, conectando <strong>desenvolvimento de software, aplicações, sistemas e segurança</strong>.
-
 > <em>Aprender tecnologia, para mim, é entender problemas e descobrir o que posso construir para resolvê-los.</em>
 
 ---
+## 📬 Contato
 
-📬 Contato
+<p align="center">
+  <a href="https://www.linkedin.com/in/gabivsv/">
+    <img src="https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin-in&logoColor=00FF21" alt="LinkedIn">
+  </a>
 
-<div align="center">
+  <a href="mailto:contatogabrielavieirasv@gmail.com">
+    <img src="https://img.shields.io/badge/E--mail-000?style=for-the-badge&logo=gmail&logoColor=00FF21" alt="E-mail">
+  </a>
 
-<a href="https://www.linkedin.com/in/gabivsv"> <img src="https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=00FF21" alt="LinkedIn"> </a>
+  <a href="https://nebulosadev.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfólio-000?style=for-the-badge&logo=vercel&logoColor=00FF21" alt="Portfólio">
+  </a>
+</p>
 
-<a href="https://nebulosadev.vercel.app"> <img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel&logoColor=00FF21" alt="Portfolio"> </a>
-
-</div>
 
 
 <picture>
