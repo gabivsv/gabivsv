@@ -1,0 +1,49 @@
+name: Generate contribution spaceship
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout output branch
+        uses: actions/checkout@v4
+        with:
+          ref: output
+
+      - name: Checkout generator
+        uses: actions/checkout@v4
+        with:
+          path: generator
+          ref: main
+
+      - name: Generate light theme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          THEME: light
+          OUTPUT: github-contribution-spaceship.svg
+        run: node generator/generate.mjs
+
+      - name: Generate dark theme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          THEME: dark
+          OUTPUT: github-contribution-spaceship-dark.svg
+        run: node generator/generate.mjs
+
+      - name: Publish SVGs
+        run: |
+          cp dist/*.svg .
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add *.svg
+          git diff --cached --quiet || git commit -m "Update contribution spaceship"
+          git push origin output
